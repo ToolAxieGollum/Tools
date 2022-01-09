@@ -354,12 +354,27 @@ axie3back = 0;
 axie3tail = 0;
 
 function usePartA1M() {
+
+  let Costo = document.getElementById("costEnergy").value;
+  let energia = document.getElementById("gEnergy").value;
+
   axie1mouth += 1;
   
   if (axie1mouth >= 2) {
     axie1mouth = 2;
   }
   
+  if (Costo == "n"){
+    minusCard();
+  }else{
+    subtract();
+    minusCard();
+  }
+
+  if (energia == "s"){
+    add();
+  }
+
   document.getElementById("a1mCounter").innerHTML = axie1mouth;
 }
 
