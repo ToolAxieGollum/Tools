@@ -75,7 +75,7 @@
                 </div>
             </div>
 
-            <div class="cnc-container">
+            <div class="cnc-container" >
                 <div class="cnc-container-grid">
                     <div class="cnc-grid-item">
                         <img class="enemy-cards" src="assets/img/cards.png" alt="Enemy cards"><span id="currentCards" class="current-cards">6</span>
@@ -151,9 +151,22 @@
                             </select>
                         </div>
                         <div class="mouth">
+                            <div class="axie-type-select-container">
+                                <select id="costEnergy"  >
+                                    <option value="n" selected>No</option>
+                                    <option value="s">Si</option>                                   
+                                </select>
+                            </div>
+                            <div class="axie-type-select-container">
+                                <select id="gEnergy"  >
+                                    <option value="n" >No</option>
+                                    <option value="s" selected>Si</option>                                   
+                                </select>
+                            </div>
                             <div id="a1mButton" class="part-button" role="button" aria-pressed="false">
                                 <button class="" onclick="usePartA1M()"><img id="a1m" src="assets/img/parts/plant/mouth.svg"></button>
                             </div>
+                            
                             <div id="a1mLabel" class="part-label" role="button" aria-pressed="false">
                                 <label id="a1mCounter" class="" onclick="substractPartA1M()">0</label>
                             </div>
