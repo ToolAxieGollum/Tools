@@ -355,14 +355,8 @@ axie3tail = 0;
 
 function usePartA1M() {
 
-  let Costo = document.getElementById("costEnergy").value;
-  let energia = document.getElementById("gEnergy").value;
-
-  axie1mouth += 1;
-  
-  if (axie1mouth >= 2) {
-    axie1mouth = 2;
-  }
+  let Costo = document.getElementById("costEnergyM1").value;
+  let energia = document.getElementById("gEnergyM1").value;
   
   if (Costo == "n"){
     minusCard();
@@ -374,7 +368,13 @@ function usePartA1M() {
   if (energia == "s"){
     add();
   }
-
+  
+  axie1mouth += 1;
+  
+  if (axie1mouth >= 2) {
+    axie1mouth = 2;
+  }
+  
   document.getElementById("a1mCounter").innerHTML = axie1mouth;
 }
 
@@ -389,6 +389,21 @@ function substractPartA1M() {
 }
 
 function usePartA1H() {
+  
+  let Costo = document.getElementById("costEnergyH1").value;
+  let energia = document.getElementById("gEnergyH1").value;
+  
+  if (Costo == "n"){
+    minusCard();
+  }else{
+    subtract();
+    minusCard();
+  }
+
+  if (energia == "s"){
+    add();
+  }
+  
   axie1horn += 1;
   
   if (axie1horn >= 2) {
@@ -409,6 +424,21 @@ function substractPartA1H() {
 }
 
 function usePartA1B() {
+  
+  let Costo = document.getElementById("costEnergyB1").value;
+  let energia = document.getElementById("gEnergyB1").value;
+  
+  if (Costo == "n"){
+    minusCard();
+  }else{
+    subtract();
+    minusCard();
+  }
+
+  if (energia == "s"){
+    add();
+  }
+  
   axie1back += 1;
   
   if (axie1back >= 2) {
@@ -429,6 +459,21 @@ function substractPartA1B() {
 }
 
 function usePartA1T() {
+  
+  let Costo = document.getElementById("costEnergyT1").value;
+  let energia = document.getElementById("gEnergyT1").value;
+  
+  if (Costo == "n"){
+    minusCard();
+  }else{
+    subtract();
+    minusCard();
+  }
+
+  if (energia == "s"){
+    add();
+  }
+  
   axie1tail += 1;
   
   if (axie1tail >= 2) {
@@ -471,6 +516,21 @@ function resetA1Parts() {
 }
 
 function usePartA2M() {
+  
+  let Costo = document.getElementById("costEnergyM2").value;
+  let energia = document.getElementById("gEnergyM2").value;
+  
+  if (Costo == "n"){
+    minusCard();
+  }else{
+    subtract();
+    minusCard();
+  }
+
+  if (energia == "s"){
+    add();
+  }
+  
   axie2mouth += 1;
   
   if (axie2mouth >= 2) {
@@ -491,6 +551,21 @@ function substractPartA2M() {
 }
 
 function usePartA2H() {
+  
+  let Costo = document.getElementById("costEnergyH2").value;
+  let energia = document.getElementById("gEnergyH2").value;
+  
+  if (Costo == "n"){
+    minusCard();
+  }else{
+    subtract();
+    minusCard();
+  }
+
+  if (energia == "s"){
+    add();
+  }
+  
   axie2horn += 1;
   
   if (axie2horn >= 2) {
@@ -511,6 +586,21 @@ function substractPartA2H() {
 }
 
 function usePartA2B() {
+  
+  let Costo = document.getElementById("costEnergyB2").value;
+  let energia = document.getElementById("gEnergyB2").value;
+  
+  if (Costo == "n"){
+    minusCard();
+  }else{
+    subtract();
+    minusCard();
+  }
+
+  if (energia == "s"){
+    add();
+  }
+  
   axie2back += 1;
   
   if (axie2back >= 2) {
@@ -531,6 +621,21 @@ function substractPartA2B() {
 }
 
 function usePartA2T() {
+  
+  let Costo = document.getElementById("costEnergyT2").value;
+  let energia = document.getElementById("gEnergyT2").value;
+  
+  if (Costo == "n"){
+    minusCard();
+  }else{
+    subtract();
+    minusCard();
+  }
+
+  if (energia == "s"){
+    add();
+  }
+  
   axie2tail += 1;
   
   if (axie2tail >= 2) {
@@ -573,6 +678,21 @@ function resetA2Parts() {
 }
 
 function usePartA3M() {
+  
+  let Costo = document.getElementById("costEnergyM3").value;
+  let energia = document.getElementById("gEnergyM3").value;
+  
+  if (Costo == "n"){
+    minusCard();
+  }else{
+    subtract();
+    minusCard();
+  }
+
+  if (energia == "s"){
+    add();
+  }
+  
   axie3mouth += 1;
   
   if (axie3mouth >= 2) {
@@ -593,6 +713,21 @@ function substractPartA3M() {
 }
 
 function usePartA3H() {
+  
+  let Costo = document.getElementById("costEnergyH3").value;
+  let energia = document.getElementById("gEnergyH3").value;
+  
+  if (Costo == "n"){
+    minusCard();
+  }else{
+    subtract();
+    minusCard();
+  }
+
+  if (energia == "s"){
+    add();
+  }
+  
   axie3horn += 1;
   
   if (axie3horn >= 2) {
@@ -613,6 +748,21 @@ function substractPartA3H() {
 }
 
 function usePartA3B() {
+  
+  let Costo = document.getElementById("costEnergyB3").value;
+  let energia = document.getElementById("gEnergyB3").value;
+  
+  if (Costo == "n"){
+    minusCard();
+  }else{
+    subtract();
+    minusCard();
+  }
+
+  if (energia == "s"){
+    add();
+  }
+  
   axie3back += 1;
   
   if (axie3back >= 2) {
@@ -633,6 +783,21 @@ function substractPartA3B() {
 }
 
 function usePartA3T() {
+  
+  let Costo = document.getElementById("costEnergyT3").value;
+  let energia = document.getElementById("gEnergyT3").value;
+  
+  if (Costo == "n"){
+    minusCard();
+  }else{
+    subtract();
+    minusCard();
+  }
+
+  if (energia == "s"){
+    add();
+  }
+  
   axie3tail += 1;
   
   if (axie3tail >= 2) {
