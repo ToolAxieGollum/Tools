@@ -28,13 +28,13 @@
             .then(res => res.json())
             .then(data => {
                 contenido.innerHTML = ` 
-                Carta 1: ${data.parts['2'].name} 
+                <p>Carta 1: ${data.parts['2'].name} 
                 Energia: ${data.parts['2'].abilities['0'].energy}
                 <img src="${data.parts['2'].abilities['0'].backgroundUrl}"></p>
                 
-                Carta 2: ${data.parts['3'].name} 
-                Energia: ${data.parts['3'].abilities['0'].energy}
-                <img src="${data.parts['3'].abilities['0'].backgroundUrl}"></p>
+                <p>Carta 2: ${data.parts['3'].name} 
+                Energia: ${data.parts['3'].abilities['0'].energy}<p>
+                <p><img src="${data.parts['3'].abilities['0'].backgroundUrl}"></p>
                 
                 Carta 3: ${data.parts['4'].name} 
                 Energia: ${data.parts['4'].abilities['0'].energy}</p>
