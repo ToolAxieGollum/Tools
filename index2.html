@@ -27,12 +27,19 @@
             fetch('https://api.axie.technology/getaxies/4027641')
             .then(res => res.json())
             .then(data => {
-                console.log(data.parts['0'])
-                contenido.innerHTML = `
-                <p>Nombre: ${data.name}</p>
-                <p>Carta 1: ${data.parts['2'].name}</p>
-                <p>Energia: ${data.parts['2'].abilities['0'].energy}</p>
+                contenido.innerHTML = ` 
+                Carta 1: ${data.parts['2'].name} 
+                Energia: ${data.parts['2'].abilities['0'].energy}</p>
                 <img src="${data.parts['2'].abilities['0'].backgroundUrl}">
+                Carta 1: ${data.parts['3'].name} 
+                Energia: ${data.parts['3'].abilities['0'].energy}</p>
+                <img src="${data.parts['3'].abilities['0'].backgroundUrl}">
+                Carta 1: ${data.parts['4'].name} 
+                Energia: ${data.parts['4'].abilities['0'].energy}</p>
+                <img src="${data.parts['4'].abilities['0'].backgroundUrl}">
+                Carta 1: ${data.parts['5'].name} 
+                Energia: ${data.parts['5'].abilities['0'].energy}</p>
+                <img src="${data.parts['5'].abilities['0'].backgroundUrl}">
                 `
             })
         } 
