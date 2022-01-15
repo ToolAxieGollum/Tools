@@ -442,9 +442,21 @@
             .then(res => res.json())
             .then(data => {
                 m1.innerHTML = `                 
-                <button class="" onclick="usePartA1M()"><img id="a1m" src="${data.parts['2'].abilities['0'].backgroundUrl}"></button>
-                <label id="costEnergyM1" class="" onclick="">${data.parts['2'].abilities['0'].energy}</label>
-                `
+                <p>Carta 1: ${data.parts['2'].name} 
+                Energia: ${data.parts['2'].abilities['0'].energy}</p>
+                <p><img src="${data.parts['2'].abilities['0'].backgroundUrl}" width="70px"></p>
+                
+                <p>Carta 2: ${data.parts['3'].name} 
+                Energia: ${data.parts['3'].abilities['0'].energy}</p>
+                <p><img src="${data.parts['3'].abilities['0'].backgroundUrl}" width="70px"></p>
+                
+                <p>Carta 3: ${data.parts['4'].name} 
+                Energia: ${data.parts['4'].abilities['0'].energy}</p>
+                <img src="${data.parts['4'].abilities['0'].backgroundUrl}" width="70px">
+                
+                <p>Carta 4: ${data.parts['5'].name} 
+                Energia: ${data.parts['5'].abilities['0'].energy}</p>
+                <img src="${data.parts['5'].abilities['0'].backgroundUrl}" width="70px">
             })
             .then(data => {
                 h1.innerHTML = `                 
