@@ -156,11 +156,10 @@
                         </div>
                         <div class="axie-type-select-container">
                           <input id="axie1" type="text" />
-                        </div>
-                        
+                        </div>                        
                         <div class="mouth">
-                            <div id="a1mLabelx" class="part-label" role="button" aria-pressed="false">
-                                <label id="a1mCounterx" class="" onclick="substractPartA1M()">0</label>
+                            <div id="a1mLabelm" class="part-label" role="button" aria-pressed="false">
+                                <label id="gEnergyM1" class="" onclick="substractPartA1M2()">0</label>
                             </div> 
                             <div id="a1mButton" class="part-button" role="button" aria-pressed="false">
                                 
@@ -169,30 +168,34 @@
                                 <label id="a1mCounter" class="" onclick="substractPartA1M()">0</label>
                             </div>
                         </div>
-                        
-                       
                         <div class="horn">
-                            <label id="CEh1" class="" onclick="">0</label>                                    
+                            <div id="a1mLabelh" class="part-label" role="button" aria-pressed="false">
+                                <label id="gEnergyH1" class="" onclick="substractPartA1H2()">0</label>
+                            </div> 
                             <div id="a1hButton" class="part-button">
-                                <button class="" onclick="usePartA1H()"><img id="a1h" src="assets/img/parts/plant/horn.svg"></button>
+                                
                             </div>
                             <div id="a1hLabel" class="part-label" role="button" aria-pressed="false">
                                 <label id="a1hCounter" onclick="substractPartA1H()">0</label>
                             </div>
                         </div>
                         <div class="back">
-                            <label id="CEb1" class="" onclick="">0</label>                  
+                            <div id="a1mLabelb" class="part-label" role="button" aria-pressed="false">
+                                <label id="gEnergyB1" class="" onclick="substractPartA1B2()">0</label>
+                            </div> 
                             <div id="a1bButton" class="part-button">
-                                <button class="" onclick="usePartA1B()"><img id="a1b" src="assets/img/parts/plant/back.svg"></button>
+                                
                             </div>
                             <div id="a1bLabel" class="part-label" role="button" aria-pressed="false">
                                 <label id="a1bCounter" onclick="substractPartA1B()">0</label>
                             </div>
                         </div>
                         <div class="tail">
-                            <label id="CEt1" class="" onclick="">0</label>
+                            <div id="a1mLabelt" class="part-label" role="button" aria-pressed="false">
+                                <label id="gEnergyT1" class="" onclick="substractPartA1T2()">0</label>
+                            </div> 
                             <div id="a1tButton" class="part-button">
-                                <button class="" onclick="usePartA1T()"><img id="a1t" src="assets/img/parts/plant/tail.svg"></button>
+                                
                             </div>
                             <div id="a1tLabel" class="part-label" role="button" aria-pressed="false">
                                 <label id="a1tCounter" onclick="substractPartA1T()">0</label>
@@ -429,14 +432,30 @@
         </div>
     </div>
     <script>
-        var contenido = document.querySelector('#a1mButton')
+        var m1 = document.querySelector('#a1mButton')
+        var h1 = document.querySelector('#a1hButton')
+        var b1 = document.querySelector('#a1bButton')
+        var t1 = document.querySelector('#a1tButton')
         
         function buscarCartas() {
             fetch('https://api.axie.technology/getaxies/4027641')
             .then(res => res.json())
             .then(data => {
-                contenido.innerHTML = `                 
-                <button class="" onclick="usePartA1M()"><img id="a1m" src="${data.parts['2'].abilities['0'].backgroundUrl}"></button>                
+                m1.innerHTML = `                 
+                <button class="" onclick="usePartA1M()"><img id="a1m" src="${data.parts['2'].abilities['0'].backgroundUrl}"></button>
+                <label id="costEnergyM1" class="" onclick="">${data.parts['2'].abilities['0'].energy}</label>
+                `
+                h1.innerHTML = `                 
+                <button class="" onclick="usePartA1H()"><img id="a1m" src="${data.parts['2'].abilities['1'].backgroundUrl}"></button>
+                <label id="costEnergyM1" class="" onclick="">${data.parts['2'].abilities['0'].energy}</label>
+                `
+                b1.innerHTML = `                 
+                <button class="" onclick="usePartA1B()"><img id="a1m" src="${data.parts['2'].abilities['2'].backgroundUrl}"></button>
+                <label id="costEnergyM1" class="" onclick="">${data.parts['2'].abilities['0'].energy}</label>
+                `
+                t1.innerHTML = `                 
+                <button class="" onclick="usePartA1T()"><img id="a1m" src="${data.parts['2'].abilities['3'].backgroundUrl}"></button>
+                <label id="costEnergyM1" class="" onclick="">${data.parts['2'].abilities['0'].energy}</label>
                 `
             })
         } 
