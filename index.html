@@ -154,7 +154,10 @@
                                 <option value="reptile">Reptile</option>
                             </select>
                         </div>
-
+                        
+                        <div class="axie-type-select-container">
+                          <input id="axie1" type="text" />
+                        </div>
                         <div id="a1mButton">
 
                         </div>
@@ -381,15 +384,13 @@
     </div>
     <script>
         var m1 = document.querySelector('#a1mButton')
+        var axieId = 'https://api.axie.technology/getaxies/' + '4027641'
         
         function buscarCartas() {
-            fetch('https://api.axie.technology/getaxies/4027641')
+            fetch(axieId)
             .then(res => res.json())
             .then(data => {
-                m1.innerHTML = `
-                        <div class="axie-type-select-container">
-                          <input id="axie1" type="text" />
-                        </div>                        
+                m1.innerHTML = `                                                
                         <div class="mouth">
                             <div id="a1mLabelm" class="part-label" role="button" aria-pressed="false">
                                 <label id="gEnergyM1" class="" onclick="substractPartA1M2()">0</label>
