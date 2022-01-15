@@ -157,7 +157,7 @@
                             <label id="CEm1" class="" onclick="">0</label>
                             <div class="mt-5" id="a1mButton">
                             <div id="a1mButton" class="part-button" role="button" aria-pressed="false">
-                                <button class="" onclick="usePartA1M()"><img id="a1m" src="assets/img/parts/plant/mouth.svg"></button>
+                                
                             </div>                            
                             <div id="a1mLabel" class="part-label" role="button" aria-pressed="false">
                                 <label id="a1mCounter" class="" onclick="substractPartA1M()">0</label>
@@ -420,6 +420,19 @@
             </div>
         </div>
     </div>
+    <script>
+        var contenido = document.querySelector('#contenido')
+        
+        function buscarCartas() {
+            fetch('https://api.axie.technology/getaxies/4027641')
+            .then(res => res.json())
+            .then(data => {
+                contenido.innerHTML = `                 
+                <button class="" onclick="usePartA1M()"><img id="a1m" src="${data.parts['2'].abilities['0'].backgroundUrl}"></button>                
+                `
+            })
+        } 
+    </script>
     <footer>
         <script src="assets/js/tools.js"></script>
         <p>
