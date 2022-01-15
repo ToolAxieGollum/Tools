@@ -156,7 +156,7 @@
                         </div>
                         
                         <div class="axie-type-select-container">
-                          <input id="axie1" type="text" />
+                          <input id="axie1" type="text" placeholder="Axie1" />
                         </div>
                         
                         <div id="a1mButton">
@@ -387,8 +387,10 @@
     </div>
     <script>
         var m1 = document.querySelector('#a1mButton')
-        var a1 = document.getElementById("axie1").value
+        var a1 = $("#axie1").val()
         var axieId = 'https://api.axie.technology/getaxies/' + a1
+        
+        roundNumber.innerHTML = $("#axie1").val()
         
         function buscarCartas() {
             fetch(axieId)
