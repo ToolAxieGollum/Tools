@@ -442,40 +442,10 @@
             .then(res => res.json())
             .then(data => {
                 m1.innerHTML = `                 
-                <p>Carta 1: ${data.parts['2'].name} 
-                Energia: ${data.parts['2'].abilities['0'].energy}</p>
-                <p><img src="${data.parts['2'].abilities['0'].backgroundUrl}" width="70px"></p>
-                
-                <p>Carta 2: ${data.parts['3'].name} 
-                Energia: ${data.parts['3'].abilities['0'].energy}</p>
-                <p><img src="${data.parts['3'].abilities['0'].backgroundUrl}" width="70px"></p>
-                
-                <p>Carta 3: ${data.parts['4'].name} 
-                Energia: ${data.parts['4'].abilities['0'].energy}</p>
-                <img src="${data.parts['4'].abilities['0'].backgroundUrl}" width="70px">
-                
-                <p>Carta 4: ${data.parts['5'].name} 
-                Energia: ${data.parts['5'].abilities['0'].energy}</p>
-                <img src="${data.parts['5'].abilities['0'].backgroundUrl}" width="70px">
-            })
-            .then(data => {
-                h1.innerHTML = `                 
-                <button class="" onclick="usePartA1H()"><img id="a1m" src="${data.parts['3'].abilities['0'].backgroundUrl}"></button>
-                <label id="costEnergyM1" class="" onclick="">${data.parts['3'].abilities['0'].energy}</label>
+                <button class="" onclick="usePartA1M()"><img id="a1m" src="${data.parts['2'].abilities['0'].backgroundUrl}"></button>
+                <label id="costEnergyM1" class="" onclick="">${data.parts['2'].abilities['0'].energy}</label>
                 `
-            })
-            .then(data => {
-                b1.innerHTML = `                 
-                <button class="" onclick="usePartA1B()"><img id="a1m" src="${data.parts['4'].abilities['0'].backgroundUrl}"></button>
-                <label id="costEnergyM1" class="" onclick="">${data.parts['4'].abilities['0'].energy}</label>
-                `
-            })
-            .then(data => {
-                t1.innerHTML = `                 
-                <button class="" onclick="usePartA1T()"><img id="a1m" src="${data.parts['5'].abilities['0'].backgroundUrl}"></button>
-                <label id="costEnergyM1" class="" onclick="">${data.parts['5'].abilities['0'].energy}</label>
-                `
-            })
+            })            
         } 
     </script>
     <footer>
