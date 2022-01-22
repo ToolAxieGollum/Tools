@@ -353,6 +353,9 @@ axie3horn = 0;
 axie3back = 0;
 axie3tail = 0;
 
+var axie1x = document.getElementById("gEnergyM1");
+axie1x = 0;
+
 function usePartA1M() {
 
   let Costo = document.getElementById("costEnergyM1").value;
@@ -386,6 +389,16 @@ function substractPartA1M() {
   }
   
   document.getElementById("a1mCounter").innerHTML = axie1mouth;
+}
+function substractEnergia1M() {  
+  
+  if (axie1x == 0) {
+    axie1x = 1;
+  }else {
+    axie1x = 0;
+  }
+  
+  document.getElementById("gEnergyM1").innerHTML = axie1x;
 }
 
 function usePartA1H() {
@@ -983,6 +996,3 @@ buttons.forEach((btn) => {
         }
     });
 });
-
-
-
