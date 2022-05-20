@@ -1,54 +1,365 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="github.com/jmarcosg">
+    <meta name="description" content="Varias herramientas para Axie Infinity">
 
-    <!-- Bootstrap CSS -->
+    <title>Axie Tools</title>
+
+    <!--icons-->
+    <link rel="icon" type="image/png" href="assets/img/kotaro.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+
+    <!--stylesheet-->
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    <link rel="stylesheet" href="assets/styles/tools.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    
+     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
 
-    <title>Hello, world!</title>
 </head>
 
 <body>
-    <div class="container my-5 text-center">
-        <button class="btn btn-danger w-100" onclick="traer()">Obtener</button>
-        <div class="mt-5" id="contenido">
-            
+
+    <div class="main-container">
+        <div class="tools-container">
+            <div class="energy-calculator-container">
+                <div class="round-container">
+                    <div class="round-info">
+                        <span>Ronda&nbsp;</span>
+                        <span id="roundNumber" class="">1</span>
+                    </div>
+
+                    <div class="energy-quantity">
+                        <img class="axie-match-energy" src="assets/img/matchEnergyIcon.svg" alt="Ícono con la cantidad de energía del oponente">
+
+                        <span>
+                            <b id="actualEnergy" class="actual-energy">3</b>
+                            <b class="energy-divider">/</b>
+                            <b id="maxEnergy" class="max-energy">10</b>
+                        </span>
+                        
+                        
+                    </div>
+                    <div class="energy-quantity">                 
+                        <span id="currentCards" class="current-cards">6</span>
+                    </div>
+                </div>
+
+                <div class="ene-gain-loss-container">
+                    <div class="energy-tools">
+                        <button onclick="subtract()"><i class="fas fa-minus"></i>&nbsp;1 Energía</button>
+                        <button onclick="add()"><i class="fas fa-plus"></i>&nbsp;1 Energía</button>
+                    </div>
+
+                    <div class="energy-tools">
+                        <button id="nextRound" onclick="nextRound()">Siguiente Ronda</button>
+                        <button id="newArena" onclick="reset()">Nueva Partida</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cnc-container" style="display: none">
+                <div class="cnc-container-grid">
+                    <div class="cnc-grid-item">
+                        <img class="enemy-cards" src="assets/img/cards.png" alt="Enemy cards"><span id="currentCards" class="current-cards">6</span>
+
+                        <div class="cards-buttons" style="display: none">
+                            <div class="minus-card">
+                                <button onclick="minusCard()">- 1 Carta</button>
+                            </div>
+
+                            <div class="plus-card" >
+                                <button onclick="addCard()">+ 1 Carta</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cnc-grid-item">
+                        <img id="modalBtn" class="calc-icon" src="assets/img/calculatorIcon.svg" alt="Drawn calculator">
+                    </div>
+                </div>
+            </div>
+
+            <div id="calculatorModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <section id="Display-area">
+                        <div class="currentInput"></div>
+                        <div class="answerScreen">0</div>
+                    </section>
+                    <section class="keypad-btns">
+                        <button type="button" class="fun_btn" id="clear" value="">
+                            C
+                        </button>
+                        <button type="button" class="fun_btn" id="erase" value="">
+                            &#11013;
+                        </button>
+                        <button type="button" class="fun_btn" value="/">/</button>
+                        <button type="button" class="fun_btn" value="%">%</button>
+                        <button type="button" class="num_btn" value="7">7</button>
+                        <button type="button" class="num_btn" value="8">8</button>
+                        <button type="button" class="num_btn" value="9">9</button>
+                        <button type="button" class="fun_btn" value="*">x</button>
+                        <button type="button" class="num_btn" value="4">4</button>
+                        <button type="button" class="num_btn" value="5">5</button>
+                        <button type="button" class="num_btn" value="6">6</button>
+                        <button type="button" class="fun_btn" value="-">-</button>
+                        <button type="button" class="num_btn" value="1">1</button>
+                        <button type="button" class="num_btn" value="2">2</button>
+                        <button type="button" class="num_btn" value="3">3</button>
+                        <button type="button" class="fun_btn" value="+">+</button>
+                        <button type="button" class="num_btn" value="00">00</button>
+                        <button type="button" class="num_btn" value="0">0</button>
+                        <button type="button" class="num_btn" value=".">.</button>
+                        <button type="button" class="fun_btn" id="evaluate" value="">=</button>
+                    </section>
+                </div>
+            </div>
+
+            <div >
+                <div class="parts-container-grid">
+                    <div id="axie1Grid" >                       
+                        
+                        <div class="axie-type-select-container">
+                          <input id="axie1" type="text" placeholder="Axie 1" value="" />
+                        </div>                        
+                        <div id="axie1Contenedor">
+
+                        </div>                        
+                    </div>
+                    <div id="axie2Grid" >
+                        
+                        <div class="axie-type-select-container">
+                          <input id="axie2" type="text" placeholder="Axie 2" value=""/>
+                        </div>
+                        <div id="axie2Contenedor">
+
+                        </div> 
+                    </div>
+
+                    <div id="axie3Grid" >
+                        
+                        <div class="axie-type-select-container">
+                            <input id="axie3" type="text" placeholder="Axie 3" value=""/>
+                            <div id="a3bButtonn" >
+                                <button class="part-button" onclick="buscarCartas()">Buscar</button>
+                            </div>                          
+                        </div>
+                        <div id="axie3Contenedor">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <script type="text/javascript">
 
-    <script>
-        var contenido = document.querySelector('#contenido')
-        function traer() {
-            fetch('https://api.axie.technology/getaxies/4027641')
-            .then(res => res.json())
-            .then(data => {
-                contenido.innerHTML = ` 
-                <p>Carta 1: ${data.parts['2'].name} 
-                Energia: ${data.parts['2'].abilities['0'].energy}</p>
-                <p><img src="${data.parts['2'].abilities['0'].backgroundUrl}" width="70px"></p>
-                
-                <p>Carta 2: ${data.parts['3'].name} 
-                Energia: ${data.parts['3'].abilities['0'].energy}</p>
-                <p><img src="${data.parts['3'].abilities['0'].backgroundUrl}" width="70px"></p>
-                
-                <p>Carta 3: ${data.parts['4'].name} 
-                Energia: ${data.parts['4'].abilities['0'].energy}</p>
-                <img src="${data.parts['4'].abilities['0'].backgroundUrl}" width="70px">
-                
-                <p>Carta 4: ${data.parts['5'].name} 
-                Energia: ${data.parts['5'].abilities['0'].energy}</p>
-                <img src="${data.parts['5'].abilities['0'].backgroundUrl}" width="70px">
-                `
-            })
-        } 
+        var m1 = document.querySelector('#axie1Contenedor')   
+        var m2 = document.querySelector('#axie2Contenedor')
+        var m3 = document.querySelector('#axie3Contenedor')     
+        
+        function buscarCartas() {   
+
+            var ax1 = axie1.value 
+            var ax2 = axie2.value
+            var ax3 = axie3.value           
+            var axieId1 = 'https://api.axie.technology/getaxies/' + ax1
+            var axieId2 = 'https://api.axie.technology/getaxies/' + ax2
+            var axieId3 = 'https://api.axie.technology/getaxies/' + ax3
+            
+            fetch(axieId1)
+                .then(res => res.json())
+                .then(data => {
+                    m1.innerHTML = `
+                            <div class="mouth">
+                                <div id="a1mLabelm" class="part-label" role="button" aria-pressed="false">
+                                    <span id="lm1"><label id="gEnergyM1" class="" onclick="substractEnergia1M()">${data.parts['3'].abilities['0'].energy}</label></span>
+                                </div> 
+                                <div id="a1mButton" class="part-button" role="button" aria-pressed="false">
+                                    <button class="" onclick="usePartA1M()"><img id="a1m" src="${data.parts['3'].abilities['0'].backgroundUrl}"></button>                                
+                                </div>
+                                <div id="a1mLabel" class="part-label" role="button" aria-pressed="false">
+                                    <label id="a1mCounter" onclick="substractPartA1M()">0</label>
+                                </div>
+                            </div>
+                            <div class="horn">
+                                <div id="a1mLabelh" class="part-label" role="button" aria-pressed="false">
+                                    <span id="lh1"><label id="gEnergyH1" class="" onclick="substractEnergia1H()">${data.parts['4'].abilities['0'].energy}</label></span>
+                                </div> 
+                                <div id="a1hButton" class="part-button">
+                                    <button class="" onclick="usePartA1H()"><img id="a1m" src="${data.parts['4'].abilities['0'].backgroundUrl}"></button>
+                                </div>
+                                <div id="a1hLabel" class="part-label" role="button" aria-pressed="false">
+                                    <label id="a1hCounter" onclick="substractPartA1H()">0</label>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div id="a1mLabelb" class="part-label" role="button" aria-pressed="false">
+                                    <span id="lb1"><label id="gEnergyB1" class="" onclick="substractEnergia1B()">${data.parts['2'].abilities['0'].energy}</label></span>
+                                </div> 
+                                <div id="a1bButton" class="part-button">
+                                    <button class="" onclick="usePartA1B()"><img id="a1m" src="${data.parts['2'].abilities['0'].backgroundUrl}"></button>
+                                </div>
+                                <div id="a1bLabel" class="part-label" role="button" aria-pressed="false">
+                                    <label id="a1bCounter" onclick="substractPartA1B()">0</label>
+                                </div>
+                            </div>
+                            <div class="tail">
+                                <div id="a1mLabelt" class="part-label" role="button" aria-pressed="false">
+                                    <span id="lt1"><label id="gEnergyT1" class="" onclick="substractEnergia1T()">${data.parts['5'].abilities['0'].energy}</label></span>
+                                </div> 
+                                <div id="a1tButton" class="part-button">
+                                    <button class="" onclick="usePartA1T()"><img id="a1m" src="${data.parts['5'].abilities['0'].backgroundUrl}"></button>
+                                </div>
+                                <div id="a1tLabel" class="part-label" role="button" aria-pressed="false">
+                                    <label id="a1tCounter" onclick="substractPartA1T()">0</label>
+                                </div>
+                            </div>
+                            <div class="axie-actions">
+                                <div id="a1DeadButton">
+                                    <button class="dead-axie" onclick="killAxie1()"><i class="fas fa-skull"></i></button>
+                                </div>
+                                <div>
+                                    <button class="reset-parts" onclick="resetA1Parts()"><i class="fas fa-sync"></i></button>
+                                </div>
+                            </div>           
+                    `
+                })  
+                fetch(axieId2)
+                .then(res => res.json())
+                .then(data => {
+                    m2.innerHTML = `
+                            <div class="mouth">
+                                <div id="a2mLabelm" class="part-label" role="button" aria-pressed="false">
+                                    <span id="lm2"><label id="gEnergyM2" class="" onclick="substractEnergia2M()">${data.parts['3'].abilities['0'].energy}</label></span>
+                                </div> 
+                                <div id="a2mButton" class="part-button" role="button" aria-pressed="false">
+                                    <button class="" onclick="usePartA2M()"><img id="a2m" src="${data.parts['3'].abilities['0'].backgroundUrl}"></button>                                
+                                </div>
+                                <div id="a2mLabel" class="part-label" role="button" aria-pressed="false">
+                                    <label id="a2mCounter" class="" onclick="substractPartA2M()">0</label>
+                                </div>
+                            </div>
+                            <div class="horn">
+                                <div id="a2hLabelh" class="part-label" role="button" aria-pressed="false">
+                                    <span id="lh2"><label id="gEnergyH2" class="" onclick="substractEnergia2H()">${data.parts['4'].abilities['0'].energy}</label></span>
+                                </div> 
+                                <div id="a2hButton" class="part-button">
+                                    <button class="" onclick="usePartA2H()"><img id="a2h" src="${data.parts['4'].abilities['0'].backgroundUrl}"></button>
+                                </div>
+                                <div id="a2hLabel" class="part-label" role="button" aria-pressed="false">
+                                    <label id="a2hCounter" onclick="substractPartA2H()">0</label>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div id="a2bLabelb" class="part-label" role="button" aria-pressed="false">
+                                    <span id="lb2"><label id="gEnergyB2" class="" onclick="substractEnergia2B()">${data.parts['2'].abilities['0'].energy}</label></span>
+                                </div> 
+                                <div id="a2bButton" class="part-button">
+                                    <button class="" onclick="usePartA2B()"><img id="a2b" src="${data.parts['2'].abilities['0'].backgroundUrl}"></button>
+                                </div>
+                                <div id="a2bLabel" class="part-label" role="button" aria-pressed="false">
+                                    <label id="a2bCounter" onclick="substractPartA2B()">0</label>
+                                </div>
+                            </div>
+                            <div class="tail">
+                                <div id="a2tLabelt" class="part-label" role="button" aria-pressed="false">
+                                    <span id="lt2"><label id="gEnergyT2" class="" onclick="substractEnergia2T()">${data.parts['5'].abilities['0'].energy}</label></span>
+                                </div> 
+                                <div id="a2tButton" class="part-button">
+                                    <button class="" onclick="usePartA2T()"><img id="a2t" src="${data.parts['5'].abilities['0'].backgroundUrl}"></button>
+                                </div>
+                                <div id="a2tLabel" class="part-label" role="button" aria-pressed="false">
+                                    <label id="a2tCounter" onclick="substractPartA2T()">0</label>
+                                </div>
+                            </div>
+                            <div class="axie-actions">
+                                <div id="a2DeadButton">
+                                    <button class="dead-axie" onclick="killAxie2()"><i class="fas fa-skull"></i></button>
+                                </div>
+                                <div>
+                                    <button class="reset-parts" onclick="resetA2Parts()"><i class="fas fa-sync"></i></button>
+                                </div>
+                            </div>           
+                    `
+                })  
+                fetch(axieId3)
+                .then(res => res.json())
+                .then(data => {
+                    m3.innerHTML = `
+                            <div class="mouth">
+                                <div id="a3mLabelm" class="part-label" role="button" aria-pressed="false">
+                                    <span id="lm3"><label id="gEnergyM3" onclick="substractEnergia3M()">${data.parts['3'].abilities['0'].energy}</label></span>
+                                </div> 
+                                <div id="a3mButton" class="part-button" role="button" aria-pressed="false">
+                                    <button onclick="usePartA3M()"><img id="a3m" src="${data.parts['3'].abilities['0'].backgroundUrl}"></button>                                
+                                </div>
+                                <div id="a3mLabel" class="part-label" role="button" aria-pressed="false">
+                                    <label id="a3mCounter" onclick="substractPartA3M()">0</label>
+                                </div>
+                            </div>
+                            <div class="horn">
+                                <div id="a3hLabelh" class="part-label" role="button" aria-pressed="false">
+                                    <span id="lh3"><label id="gEnergyH3" onclick="substractEnergia3H()">${data.parts['4'].abilities['0'].energy}</label></span>
+                                </div> 
+                                <div id="a3hButton" class="part-button">
+                                    <button class="" onclick="usePartA3H()"><img id="a3h" src="${data.parts['4'].abilities['0'].backgroundUrl}"></button>
+                                </div>
+                                <div id="a3hLabel" class="part-label" role="button" aria-pressed="false">
+                                    <label id="a3hCounter" onclick="substractPartA3H()">0</label>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div id="a3bLabelb" class="part-label" role="button" aria-pressed="false">
+                                    <span id="lb3"><label id="gEnergyB3"  onclick="substractEnergia3B()">${data.parts['2'].abilities['0'].energy}</label></span>
+                                </div> 
+                                <div id="a3bButton" class="part-button">
+                                    <button class="" onclick="usePartA3B()"><img id="a3b" src="${data.parts['2'].abilities['0'].backgroundUrl}"></button>
+                                </div>
+                                <div id="a3bLabel" class="part-label" role="button" aria-pressed="false">
+                                    <label id="a3bCounter" onclick="substractPartA3B()">0</label>
+                                </div>
+                            </div>
+                            <div class="tail">
+                                <div id="a3mLabelt" class="part-label" role="button" aria-pressed="false">
+                                    <span id="lt3"><label id="gEnergyT3" onclick="substractEnergia3T()">${data.parts['5'].abilities['0'].energy}</label></span>
+                                </div> 
+                                <div id="a3tButton" class="part-button">
+                                    <button class="" onclick="usePartA3T()"><img id="a3t" src="${data.parts['5'].abilities['0'].backgroundUrl}"></button>
+                                </div>
+                                <div id="a3tLabel" class="part-label" role="button" aria-pressed="false">
+                                    <label id="a3tCounter" onclick="substractPartA3T()">0</label>
+                                </div>
+                            </div>
+                            <div class="axie-actions">
+                                <div id="a3DeadButton">
+                                    <button class="dead-axie" onclick="killAxie3()"><i class="fas fa-skull"></i></button>
+                                </div>
+                                <div>
+                                    <button class="reset-parts" onclick="resetA3Parts()"><i class="fas fa-sync"></i></button>
+                                </div>
+                            </div>           
+                    `
+                })         
+        }
+    
     </script>
-
-
+    <footer>
+        <script src="assets/js/tools.js"></script>
+        <p>
+            <i class="fab fa-github fa-lg"><a href="https://github.com/jmarcosg">&nbsp;Github</a></i>
+        </p>
+    </footer>
 </body>
 
 </html>
