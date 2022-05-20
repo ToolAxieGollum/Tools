@@ -353,23 +353,16 @@ axie3horn = 0;
 axie3back = 0;
 axie3tail = 0;
 
-var axie1x = document.getElementById("gEnergyM1");
-axie1x = 0;
-
+var axie1m = document.getElementById("lm1").innerText;
 function usePartA1M() {
 
-  let Costo = document.getElementById("costEnergyM1").value;
-  let energia = document.getElementById("gEnergyM1").value;
+  var costo1m = document.getElementById("lm1").innerText;
   
-  if (Costo == "n"){
+  if (costo1m == 0){
     minusCard();
   }else{
     subtract();
     minusCard();
-  }
-
-  if (energia == "s"){
-    add();
   }
   
   axie1mouth += 1;
@@ -380,7 +373,6 @@ function usePartA1M() {
   
   document.getElementById("a1mCounter").innerHTML = axie1mouth;
 }
-
 function substractPartA1M() {
   axie1mouth -= 1;
   
@@ -392,29 +384,26 @@ function substractPartA1M() {
 }
 function substractEnergia1M() {  
   
-  if (axie1x == 0) {
-    axie1x = 1;
+  if (axie1m == 0) {
+    axie1m = 1;
   }else {
-    axie1x = 0;
+    axie1m = 0;
   }
   
-  document.getElementById("gEnergyM1").innerHTML = axie1x;
+  document.getElementById("gEnergyM1").innerHTML = axie1m;
 }
+//HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
 
+var axie1h = document.getElementById("lh1").innerText;
 function usePartA1H() {
   
-  let Costo = document.getElementById("costEnergyH1").value;
-  let energia = document.getElementById("gEnergyH1").value;
+  var costo1h = document.getElementById("lh1").innerText;
   
-  if (Costo == "n"){
+  if (costo1h == 0){
     minusCard();
   }else{
     subtract();
     minusCard();
-  }
-
-  if (energia == "s"){
-    add();
   }
   
   axie1horn += 1;
@@ -427,31 +416,37 @@ function usePartA1H() {
 }
 
 function substractPartA1H() {
-  axie1mouth -= 1;
+  axie1horn -= 1;
   
-  if (axie1mouth <= 0) {
-    axie1mouth = 0;
+  if (axie1horn <= 0) {
+    axie1horn = 0;
   }
   
-  document.getElementById("a1hCounter").innerHTML = axie1mouth;
+  document.getElementById("a1hCounter").innerHTML = axie1horn;
 }
-
+function substractEnergia1H() {  
+  
+  if (axie1h == 0) {
+    axie1h = 1;
+  }else {
+    axie1h = 0;
+  }
+  
+  document.getElementById("gEnergyH1").innerHTML = axie1h;
+}
+//BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+var axie1b = document.getElementById("lb1").innerText;
 function usePartA1B() {
   
-  let Costo = document.getElementById("costEnergyB1").value;
-  let energia = document.getElementById("gEnergyB1").value;
+  var costo1b = document.getElementById("lb1").innerText;
   
-  if (Costo == "n"){
+  if (costo1b == 0){
     minusCard();
   }else{
     subtract();
     minusCard();
   }
 
-  if (energia == "s"){
-    add();
-  }
-  
   axie1back += 1;
   
   if (axie1back >= 2) {
@@ -460,31 +455,36 @@ function usePartA1B() {
   
   document.getElementById("a1bCounter").innerHTML = axie1back;
 }
-
 function substractPartA1B() {
-  axie1mouth -= 1;
+  axie1back -= 1;
   
-  if (axie1mouth <= 0) {
-    axie1mouth = 0;
+  if (axie1back <= 0) {
+    axie1back = 0;
   }
   
-  document.getElementById("a1bCounter").innerHTML = axie1mouth;
+  document.getElementById("a1bCounter").innerHTML = axie1back;
 }
-
+function substractEnergia1B() {  
+  
+  if (axie1b == 0) {
+    axie1b = 1;
+  }else {
+    axie1b = 0;
+  }
+  
+  document.getElementById("gEnergyB1").innerHTML = axie1b;
+}
+//TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+var axie1t = document.getElementById("lt1").innerText;
 function usePartA1T() {
   
-  let Costo = document.getElementById("costEnergyT1").value;
-  let energia = document.getElementById("gEnergyT1").value;
+  var costo1t = document.getElementById("lt1").innerText;
   
-  if (Costo == "n"){
+  if (costo1t == 0){
     minusCard();
   }else{
     subtract();
     minusCard();
-  }
-
-  if (energia == "s"){
-    add();
   }
   
   axie1tail += 1;
@@ -497,14 +497,352 @@ function usePartA1T() {
 }
 
 function substractPartA1T() {
-  axie1mouth -= 1;
+  axie1tail -= 1;
   
-  if (axie1mouth <= 0) {
-    axie1mouth = 0;
+  if (axie1tail <= 0) {
+    axie1tail = 0;
   }
   
-  document.getElementById("a1tCounter").innerHTML = axie1mouth;
+  document.getElementById("a1tCounter").innerHTML = axie1tail;
 }
+function substractEnergia1T() {  
+  
+  if (axie1t == 0) {
+    axie1t = 1;
+  }else {
+    axie1t = 0;
+  }
+  
+  document.getElementById("gEnergyT1").innerHTML = axie1t;
+}
+//22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222
+var axie2m = document.getElementById("lm2").innerText;
+function usePartA2M() {
+
+  var costo2m = document.getElementById("lm2").innerText;
+  
+  if (costo2m == 0){
+    minusCard();
+  }else{
+    subtract();
+    minusCard();
+  }
+  
+  axie2mouth += 1;
+  
+  if (axie2mouth >= 2) {
+    axie2mouth = 2;
+  }
+  
+  document.getElementById("a2mCounter").innerHTML = axie2mouth;
+}
+function substractPartA2M() {
+  axie2mouth -= 1;
+  
+  if (axie2mouth <= 0) {
+    axie2mouth = 0;
+  }
+  
+  document.getElementById("a2mCounter").innerHTML = axie2mouth;
+}
+function substractEnergia2M() {  
+  
+  if (axie2m == 0) {
+    axie2m = 1;
+  }else {
+    axie2m = 0;
+  }
+  
+  document.getElementById("gEnergyM2").innerHTML = axie2m;
+}
+//HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+
+var axie2h = document.getElementById("lh2").innerText;
+function usePartA2H() {
+  
+  var costo2h = document.getElementById("lh2").innerText;
+  
+  if (costo2h == 0){
+    minusCard();
+  }else{
+    subtract();
+    minusCard();
+  }
+  
+  axie2horn += 1;
+  
+  if (axie2horn >= 2) {
+    axie2horn = 2;
+  }
+  
+  document.getElementById("a2hCounter").innerHTML = axie2horn;
+}
+
+function substractPartA2H() {
+  axie2horn -= 1;
+  
+  if (axie2horn <= 0) {
+    axie2horn = 0;
+  }
+  
+  document.getElementById("a2hCounter").innerHTML = axie2horn;
+}
+function substractEnergia2H() {  
+  
+  if (axie2h == 0) {
+    axie2h = 1;
+  }else {
+    axie2h = 0;
+  }
+  
+  document.getElementById("gEnergyH2").innerHTML = axie2h;
+}
+//BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+var axie2b = document.getElementById("lb2").innerText;
+function usePartA2B() {
+  
+  var costo2b = document.getElementById("lb2").innerText;
+  
+  if (costo2b == 0){
+    minusCard();
+  }else{
+    subtract();
+    minusCard();
+  }
+
+  axie2back += 1;
+  
+  if (axie2back >= 2) {
+    axie2back = 2;
+  }
+  
+  document.getElementById("a2bCounter").innerHTML = axie2back;
+}
+function substractPartA2B() {
+  axie2back -= 1;
+  
+  if (axie2back <= 0) {
+    axie2back = 0;
+  }
+  
+  document.getElementById("a2bCounter").innerHTML = axie2back;
+}
+function substractEnergia2B() {  
+  
+  if (axie2b == 0) {
+    axie2b = 1;
+  }else {
+    axie2b = 0;
+  }
+  
+  document.getElementById("gEnergyB2").innerHTML = axie2b;
+}
+//TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+var axie2t = document.getElementById("lt2").innerText;
+function usePartA2T() {
+  
+  var costo2t = document.getElementById("lt2").innerText;
+  
+  if (costo2t == 0){
+    minusCard();
+  }else{
+    subtract();
+    minusCard();
+  }
+  
+  axie2tail += 1;
+  
+  if (axie2tail >= 2) {
+    axie2tail = 2;
+  }
+  
+  document.getElementById("a2tCounter").innerHTML = axie2tail;
+}
+
+function substractPartA2T() {
+  axie2tail -= 1;
+  
+  if (axie2tail <= 0) {
+    axie2tail = 0;
+  }
+  
+  document.getElementById("a2tCounter").innerHTML = axie2tail;
+}
+function substractEnergia2T() {  
+  
+  if (axie2t == 0) {
+    axie2t = 1;
+  }else {
+    axie2t = 0;
+  }
+  
+  document.getElementById("gEnergyT2").innerHTML = axie2t;
+}
+//3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
+
+var axie3m = document.getElementById("lm3").innerText;
+function usePartA3M() {
+
+  var costo3m = document.getElementById("lm3").innerText;
+  
+  if (costo3m == 0){
+    minusCard();
+  }else{
+    subtract();
+    minusCard();
+  }
+  
+  axie3mouth += 1;
+  
+  if (axie3mouth >= 2) {
+    axie3mouth = 2;
+  }
+  
+  document.getElementById("a3mCounter").innerHTML = axie3mouth;
+}
+function substractPartA3M() {
+  axie3mouth -= 1;
+  
+  if (axie3mouth <= 0) {
+    axie3mouth = 0;
+  }
+  
+  document.getElementById("a3mCounter").innerHTML = axie3mouth;
+}
+function substractEnergia3M() {  
+  
+  if (axie3m == 0) {
+    axie3m = 1;
+  }else {
+    axie3m = 0;
+  }
+  
+  document.getElementById("gEnergyM3").innerHTML = axie3m;
+}
+//HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+
+var axie3h = document.getElementById("lh3").innerText;
+function usePartA3H() {
+  
+  var costo3h = document.getElementById("lh3").innerText;
+  
+  if (costo3h == 0){
+    minusCard();
+  }else{
+    subtract();
+    minusCard();
+  }
+  
+  axie3horn += 1;
+  
+  if (axie3horn >= 2) {
+    axie3horn = 2;
+  }
+  
+  document.getElementById("a3hCounter").innerHTML = axie3horn;
+}
+
+function substractPartA2H() {
+  axie3horn -= 1;
+  
+  if (axie3horn <= 0) {
+    axie3horn = 0;
+  }
+  
+  document.getElementById("a3hCounter").innerHTML = axie3horn;
+}
+function substractEnergia3H() {  
+  
+  if (axie3h == 0) {
+    axie3h = 1;
+  }else {
+    axie3h = 0;
+  }
+  
+  document.getElementById("gEnergyH3").innerHTML = axie3h;
+}
+//BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+var axie3b = document.getElementById("lb3").innerText;
+function usePartA3B() {
+  
+  var costo3b = document.getElementById("lb3").innerText;
+  
+  if (costo3b == 0){
+    minusCard();
+  }else{
+    subtract();
+    minusCard();
+  }
+
+  axie3back += 1;
+  
+  if (axie3back >= 2) {
+    axie3back = 2;
+  }
+  
+  document.getElementById("a3bCounter").innerHTML = axie3back;
+}
+function substractPartA3B() {
+  axie3back -= 1;
+  
+  if (axie3back <= 0) {
+    axie3back = 0;
+  }
+  
+  document.getElementById("a3bCounter").innerHTML = axie3back;
+}
+function substractEnergia3B() {  
+  
+  if (axie3b == 0) {
+    axie3b = 1;
+  }else {
+    axie3b = 0;
+  }
+  
+  document.getElementById("gEnergyB3").innerHTML = axie3b;
+}
+//TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+var axie3t = document.getElementById("lt3").innerText;
+function usePartA3T() {
+  
+  var costo3t = document.getElementById("lt3").innerText;
+  
+  if (costo3t == 0){
+    minusCard();
+  }else{
+    subtract();
+    minusCard();
+  }
+  
+  axie3tail += 1;
+  
+  if (axie3tail >= 2) {
+    axie3tail = 2;
+  }
+  
+  document.getElementById("a3tCounter").innerHTML = axie3tail;
+}
+
+function substractPartA3T() {
+  axie3tail -= 1;
+  
+  if (axie3tail <= 0) {
+    axie3tail = 0;
+  }
+  
+  document.getElementById("a3tCounter").innerHTML = axie3tail;
+}
+function substractEnergia3T() {  
+  
+  if (axie3t == 0) {
+    axie3t = 1;
+  }else {
+    axie3t = 0;
+  }
+  
+  document.getElementById("gEnergyT3").innerHTML = axie3t;
+}
+
 
 function resetA1Parts() {
   document.getElementById("a1mButton").classList.remove("disabled");
@@ -528,145 +866,6 @@ function resetA1Parts() {
   document.getElementById("a1tCounter").innerHTML = axie1tail;
 }
 
-function usePartA2M() {
-  
-  let Costo = document.getElementById("costEnergyM2").value;
-  let energia = document.getElementById("gEnergyM2").value;
-  
-  if (Costo == "n"){
-    minusCard();
-  }else{
-    subtract();
-    minusCard();
-  }
-
-  if (energia == "s"){
-    add();
-  }
-  
-  axie2mouth += 1;
-  
-  if (axie2mouth >= 2) {
-    axie2mouth = 2;
-  }
-  
-  document.getElementById("a2mCounter").innerHTML = axie2mouth;
-}
-
-function substractPartA2M() {
-  axie1mouth -= 1;
-  
-  if (axie1mouth <= 0) {
-    axie1mouth = 0;
-  }
-  
-  document.getElementById("a2mCounter").innerHTML = axie1mouth;
-}
-
-function usePartA2H() {
-  
-  let Costo = document.getElementById("costEnergyH2").value;
-  let energia = document.getElementById("gEnergyH2").value;
-  
-  if (Costo == "n"){
-    minusCard();
-  }else{
-    subtract();
-    minusCard();
-  }
-
-  if (energia == "s"){
-    add();
-  }
-  
-  axie2horn += 1;
-  
-  if (axie2horn >= 2) {
-    axie2horn = 2;
-  }
-  
-  document.getElementById("a2hCounter").innerHTML = axie2horn;
-}
-
-function substractPartA2H() {
-  axie1mouth -= 1;
-  
-  if (axie1mouth <= 0) {
-    axie1mouth = 0;
-  }
-  
-  document.getElementById("a2hCounter").innerHTML = axie1mouth;
-}
-
-function usePartA2B() {
-  
-  let Costo = document.getElementById("costEnergyB2").value;
-  let energia = document.getElementById("gEnergyB2").value;
-  
-  if (Costo == "n"){
-    minusCard();
-  }else{
-    subtract();
-    minusCard();
-  }
-
-  if (energia == "s"){
-    add();
-  }
-  
-  axie2back += 1;
-  
-  if (axie2back >= 2) {
-    axie2back = 2;
-  }
-  
-  document.getElementById("a2bCounter").innerHTML = axie2back;
-}
-
-function substractPartA2B() {
-  axie1mouth -= 1;
-  
-  if (axie1mouth <= 0) {
-    axie1mouth = 0;
-  }
-  
-  document.getElementById("a2bCounter").innerHTML = axie1mouth;
-}
-
-function usePartA2T() {
-  
-  let Costo = document.getElementById("costEnergyT2").value;
-  let energia = document.getElementById("gEnergyT2").value;
-  
-  if (Costo == "n"){
-    minusCard();
-  }else{
-    subtract();
-    minusCard();
-  }
-
-  if (energia == "s"){
-    add();
-  }
-  
-  axie2tail += 1;
-  
-  if (axie2tail >= 2) {
-    axie2tail = 2;
-  }
-  
-  document.getElementById("a2tCounter").innerHTML = axie2tail;
-}
-
-function substractPartA2T() {
-  axie1mouth -= 1;
-  
-  if (axie1mouth <= 0) {
-    axie1mouth = 0;
-  }
-  
-  document.getElementById("a2tCounter").innerHTML = axie1mouth;
-}
 
 function resetA2Parts() {
   document.getElementById("a2mButton").classList.remove("disabled");
@@ -690,145 +889,6 @@ function resetA2Parts() {
   document.getElementById("a2tCounter").innerHTML = axie2tail;
 }
 
-function usePartA3M() {
-  
-  let Costo = document.getElementById("costEnergyM3").value;
-  let energia = document.getElementById("gEnergyM3").value;
-  
-  if (Costo == "n"){
-    minusCard();
-  }else{
-    subtract();
-    minusCard();
-  }
-
-  if (energia == "s"){
-    add();
-  }
-  
-  axie3mouth += 1;
-  
-  if (axie3mouth >= 2) {
-    axie3mouth = 2;
-  }
-  
-  document.getElementById("a3mCounter").innerHTML = axie3mouth;
-}
-
-function substractPartA3M() {
-  axie1mouth -= 1;
-  
-  if (axie1mouth <= 0) {
-    axie1mouth = 0;
-  }
-  
-  document.getElementById("a3mCounter").innerHTML = axie1mouth;
-}
-
-function usePartA3H() {
-  
-  let Costo = document.getElementById("costEnergyH3").value;
-  let energia = document.getElementById("gEnergyH3").value;
-  
-  if (Costo == "n"){
-    minusCard();
-  }else{
-    subtract();
-    minusCard();
-  }
-
-  if (energia == "s"){
-    add();
-  }
-  
-  axie3horn += 1;
-  
-  if (axie3horn >= 2) {
-    axie3horn = 2;
-  }
-  
-  document.getElementById("a3hCounter").innerHTML = axie3horn;
-}
-
-function substractPartA3H() {
-  axie1mouth -= 1;
-  
-  if (axie1mouth <= 0) {
-    axie1mouth = 0;
-  }
-  
-  document.getElementById("a3hCounter").innerHTML = axie1mouth;
-}
-
-function usePartA3B() {
-  
-  let Costo = document.getElementById("costEnergyB3").value;
-  let energia = document.getElementById("gEnergyB3").value;
-  
-  if (Costo == "n"){
-    minusCard();
-  }else{
-    subtract();
-    minusCard();
-  }
-
-  if (energia == "s"){
-    add();
-  }
-  
-  axie3back += 1;
-  
-  if (axie3back >= 2) {
-    axie3back = 2;
-  }
-  
-  document.getElementById("a3bCounter").innerHTML = axie3back;
-}
-
-function substractPartA3B() {
-  axie1mouth -= 1;
-  
-  if (axie1mouth <= 0) {
-    axie1mouth = 0;
-  }
-  
-  document.getElementById("a3bCounter").innerHTML = axie1mouth;
-}
-
-function usePartA3T() {
-  
-  let Costo = document.getElementById("costEnergyT3").value;
-  let energia = document.getElementById("gEnergyT3").value;
-  
-  if (Costo == "n"){
-    minusCard();
-  }else{
-    subtract();
-    minusCard();
-  }
-
-  if (energia == "s"){
-    add();
-  }
-  
-  axie3tail += 1;
-  
-  if (axie3tail >= 2) {
-    axie3tail = 2;
-  }
-  
-  document.getElementById("a3tCounter").innerHTML = axie3tail;
-}
-
-function substractPartA3T() {
-  axie1mouth -= 1;
-  
-  if (axie1mouth <= 0) {
-    axie1mouth = 0;
-  }
-  
-  document.getElementById("a3tCounter").innerHTML = axie1mouth;
-}
 
 function resetA3Parts() {
   document.getElementById("a3mButton").classList.remove("disabled");
@@ -996,3 +1056,6 @@ buttons.forEach((btn) => {
         }
     });
 });
+
+
+
